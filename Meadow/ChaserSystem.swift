@@ -29,7 +29,7 @@ class ChaserSystem : System {
     required init(scene: RealityKit.Scene) {}
 
     func update(context: SceneUpdateContext) {
-        // 目标位置即是设备位置，默认位置0，高度-2
+        // 目标位置即是设备位置，默认位置0，高度1米
 //        let targetPosition = getTargetPosition(context: context)
         let targetPosition = SIMD3<Float>(0,1,0)
         for entity in context.entities(matching: Self.query, updatingSystemWhen: .rendering) {
