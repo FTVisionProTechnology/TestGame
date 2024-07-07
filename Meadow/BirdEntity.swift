@@ -29,9 +29,9 @@ class BirdEntity: Entity {
         placeHolder.addChild(bird)
         orbit.addChild(placeHolder)
         addChild(orbit)
-
+        let audio = try? await AudioFileResource(named: "/Root/Bird_Call_Group/Bird_Call_1_wav", from: "Bird_With_Audio.usda", in: realityKitContentBundle)
         if let spatialAudioEntity = bird.findEntity(named: "SpatialAudio"),
-           let audio = try? await AudioFileResource(named: "Bird_Call_1") {
+           let audio = audio {
             audioPlaybackController = spatialAudioEntity.prepareAudio(audio)
         }
     }
